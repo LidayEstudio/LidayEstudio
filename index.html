@@ -144,6 +144,8 @@ tr{transition:background .3s}tr:hover td{background:var(--bg2)}
 .roy .sc h5,.roy .qt,.roy .orn,.roy .big,.roy .gi b,.roy .cd b{color:#E0BE75}
 .ev2.b{background:linear-gradient(160deg,#F3E8DB,#E3C98F);color:#7C5A25}.ev2.b p{font-size:13px}
 .ev2.b .sealx{background:none;box-shadow:none;color:#B98B45;font-size:44px}
+.gc{padding:16px 14px 0;text-align:center}.gc p{font-size:10px;letter-spacing:.14em;opacity:.7;margin-bottom:6px}.gc div{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.gc span{padding:5px 11px;border-radius:16px;border:1px solid #E0BE75;font-size:11px;cursor:pointer;transition:all .3s}.gc span.on{background:#E0BE75;color:#14111F}
+#gr{display:block;transition:opacity .25s}
 </style></head><body><div class="pb" id="pb"></div><div id="fx"></div><a class="wa" href="https://wa.me/573103858599?text=Hola%20LIDAY%20ESTUDIO%2C%20quiero%20cotizar%20mi%20invitaci%C3%B3n%20digital" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 <header class="hero">
 <span class="sp" style="left:12%;top:20%;animation-delay:.2s">✦</span><span class="sp" style="right:14%;top:28%;animation-delay:1.1s">✦</span><span class="sp" style="left:22%;bottom:22%;animation-delay:1.8s">✧</span><span class="sp" style="right:20%;bottom:18%;animation-delay:.7s">✦</span>
@@ -227,13 +229,13 @@ document.querySelectorAll('.card').forEach(function(c){c.addEventListener('point
 document.querySelectorAll('.pk .p').forEach(function(p){var v=parseInt(p.textContent.replace(/\D/g,'')),done=0;new IntersectionObserver(function(en,o){if(en[0].isIntersecting&&!done){done=1;var t0=performance.now();(function f(t){var q=Math.min((t-t0)/1400,1),n=Math.round(v*(1-Math.pow(1-q,3)));p.textContent='$'+n.toString().replace(/\B(?=(\d{3})+$)/g,'.');if(q<1)requestAnimationFrame(f)})(t0)}}).observe(p)});
 
 var TT={mini:['LIDAY MINI','Invitación web · información · ubicación · WhatsApp · música · cuenta regresiva'],sig:['LIDAY SIGNATURE','Animación básica · fotos y galería · Mapa + Waze · dress code · agenda · confirmación'],roy:['LIDAY ROYAL','Monograma · sobre premium · galería avanzada · RSVP · QR · mesa de regalos · por invitado']};
-var cdI,md=document.getElementById('md'),ph=document.getElementById('ph'),pw=document.getElementById('pw');
+var gt,cdI,md=document.getElementById('md'),ph=document.getElementById('ph'),pw=document.getElementById('pw');
 function bk(t,b){return '<div class="bk"><h5>'+t+'</h5>'+b+'</div>'}
 function demo(t){var m=t=='mini',s=t=='sig',r=t=='roy',o='',R=m?'':' rvd',nm='Valentina';
 pw.className='pw '+t;
 function sc(ti,b){return '<div class="sc'+R+'"><h5>'+ti+'</h5>'+b+'</div>'}
-o+='<div class="hd '+(s?'a1':r?'a2':'')+'">'+(r?'<div class="mono"><b>V</b></div>':'')+'<small>'+(r?'¡HOLA PRIMA DAYANNA!':'¡HOLA!')+'</small><p style="margin-top:4px">Te invito a mis</p><h4>'+nm+'</h4><div class="g" style="font:600 13px Montserrat;letter-spacing:.35em">MIS XV AÑOS</div><div class="orn">✦</div><div class="dt">01 · NOVIEMBRE · 2026</div></div>';
-o+='<div class="cd" id="cd"></div>';
+o+='<div class="hd '+(s?'a1':r?'a2':'')+'">'+(r?'<div class="mono"><b>V</b></div>':'')+'<small id="gr">'+(r?'¡HOLA PRIMA DAYANNA!':'¡HOLA!')+'</small><p style="margin-top:4px">Te invito a mis</p><h4>'+nm+'</h4><div class="g" style="font:600 13px Montserrat;letter-spacing:.35em">MIS XV AÑOS</div><div class="orn">✦</div><div class="dt">01 · NOVIEMBRE · 2026</div></div>';
+if(r)o+='<div class="gc"><p>Así cambia para cada invitado:</p><div id="gc"></div></div>';o+='<div class="cd" id="cd"></div>';
 o+=sc('MI MENSAJE',(m?'':'<p class="qt">“Que la luz de este día ilumine el comienzo de mi nueva etapa.”</p><br>')+'<p>Hoy comienza un nuevo capítulo de mi historia. Guardo en mi corazón a la niña que fui y recibo con ilusión a la joven en la que me convierto.</p>');
 if(s)o+=sc('MI HISTORIA','<div class="gf"><div style="background:linear-gradient(160deg,#E3C98F,#F3E8DB)">🌸</div><div style="background:linear-gradient(160deg,#F3E8DB,#D9BC7E)">👑</div><div style="background:linear-gradient(160deg,#D9BC7E,#F3E8DB)">✨</div></div>');
 if(r)o+=sc('MI HISTORIA','<div class="cr"><div><div class="sl2" style="background:linear-gradient(160deg,#3B2F66,#14111F)">🌸</div><div class="sl2" style="background:linear-gradient(160deg,#5A3F6F,#1B1530)">👑</div><div class="sl2" style="background:linear-gradient(160deg,#6B5530,#1B1530)">✨</div><div class="sl2" style="background:linear-gradient(160deg,#2F3F66,#14111F)">🦋</div></div></div>');
@@ -242,10 +244,15 @@ o+=sc('¿DÓNDE?','<p class="big">Salón Aurora</p><p>Medellín, Antioquia</p>'+
 if(!m)o+=sc('DRESS CODE','<p class="big">Formal elegante</p><p>Preferiblemente colores oscuros</p>');
 if(!m)o+=sc('EL MOMENTO','<div class="tl"><p><b>7:00 PM</b> · Recepción</p><p><b>8:00 PM</b> · Cena</p><p><b>9:00 PM</b> · Vals</p><p><b>9:30 PM</b> · Brindis</p><p><b>10:00 PM</b> · Fiesta</p></div>');
 if(r)o+=sc('SUGERENCIAS DE REGALOS','<p>Tu presencia es mi mejor regalo</p><br><div class="gi"><div><b>Lluvia de sobres</b>Un aporte para acompañarme en mis sueños.</div><div><b>Regalo libre</b>Un detalle elegido con cariño.</div></div><div class="qr"></div><p style="font-size:10px;margin-top:4px">Tu código personal</p>');
-if(r)o+=sc('CONFIRMA TU ASISTENCIA','<p style="font-size:11px;margin-bottom:8px">Antes del 20 de octubre</p><input value="Prima Dayanna" aria-label="Nombre"><select><option>1 asistente</option><option>2 asistentes</option><option>3 asistentes</option></select><textarea rows="2" placeholder="Un mensaje para mí…"></textarea><button class="bt2 f" id="rs">Confirmar asistencia</button>');
+if(r)o+=sc('CONFIRMA TU ASISTENCIA','<p style="font-size:11px;margin-bottom:8px">Antes del 20 de octubre</p><input id="gn" value="Prima Dayanna" aria-label="Nombre"><select><option>1 asistente</option><option>2 asistentes</option><option>3 asistentes</option></select><textarea rows="2" placeholder="Un mensaje para mí…"></textarea><button class="bt2 f" id="rs">Confirmar asistencia</button>');
 else o+=sc('CONFIRMA TU ASISTENCIA','<p style="font-size:11px;margin-bottom:8px">Antes del 20 de octubre</p><button class="bt2 f">'+(m?'Escribir por WhatsApp':'Confirmar por WhatsApp')+'</button>');
 o+='<div class="sc'+R+'"><p class="qt" style="font-size:13px">Con todo mi cariño, tu presencia hará aún más especial este momento.<br>¡Te espero con ilusión!</p><p style="margin-top:16px;font-size:10px;opacity:.6">Muestra con datos de ejemplo</p></div>';
-ph.innerHTML=o;ph.scrollTop=0;
+ph.innerHTML=o;ph.scrollTop=0;clearInterval(gt);
+if(r){var NM=['Prima Dayanna','Carolina','Carlos y María','Tía Marcela','Familia Gómez','Juan Pablo'],gi=0,gcb=document.getElementById('gc');
+gcb.innerHTML=NM.map(function(n,i){return '<span data-i="'+i+'">'+n+'</span>'}).join('');
+function setN(i){gi=i;var n=NM[i],g=document.getElementById('gr');g.style.opacity=0;setTimeout(function(){g.textContent='¡HOLA '+n.toUpperCase()+'!';g.style.opacity=1},250);var gn=document.getElementById('gn');if(gn)gn.value=n;gcb.querySelectorAll('span').forEach(function(s,k){s.className=k==i?'on':''})}
+setN(0);gcb.addEventListener('click',function(e){if(e.target.dataset.i){clearInterval(gt);setN(+e.target.dataset.i)}});
+gt=setInterval(function(){setN((gi+1)%NM.length)},3200)}
 pw.querySelectorAll('.ev2,.fm').forEach(function(x){x.remove()});
 var f=document.createElement('button');f.className='fm';f.textContent='🔊';f.setAttribute('aria-label','Música');f.onclick=function(){f.textContent=f.textContent=='🔊'?'🔇':'🔊'};pw.appendChild(f);
 if(!m){var e=document.createElement('div');e.className='ev2'+(r?'':' b');e.innerHTML=r?'<div class="sealx">V</div><p>TOCA PARA ABRIR</p>':'<div class="sealx">✦</div><p>TOCA PARA ABRIR</p>';e.onclick=function(x){e.classList.add('open');if(r)burst(x.clientX,x.clientY)};pw.appendChild(e)}
@@ -256,6 +263,6 @@ var tg=new Date(2026,10,1,19,0).getTime(),cd=document.getElementById('cd');
 function tk(){var d=Math.max(0,tg-Date.now()),v=[[Math.floor(d/864e5),'días'],[Math.floor(d/36e5)%24,'horas'],[Math.floor(d/6e4)%60,'min'],[Math.floor(d/1e3)%60,'seg']];cd.innerHTML=v.map(function(a){return '<div><b>'+a[0]+'</b><small>'+a[1]+'</small></div>'}).join('')}
 clearInterval(cdI);tk();cdI=setInterval(tk,1000);md.classList.add('on')}
 document.querySelectorAll('.dm').forEach(function(b){b.addEventListener('click',function(){demo(b.dataset.t)})});
-function cl(){md.classList.remove('on');clearInterval(cdI)}
+function cl(){md.classList.remove('on');clearInterval(cdI);clearInterval(gt)}
 md.querySelector('.x').onclick=cl;md.addEventListener('click',function(e){if(e.target===md)cl()});
 </script></body></html>
